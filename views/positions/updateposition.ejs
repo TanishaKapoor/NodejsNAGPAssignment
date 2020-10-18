@@ -1,0 +1,57 @@
+<style>
+  .table{
+      width: 30% !important;
+      text-align: center;
+  }
+  .heading{
+    
+      font-size: larger;
+      color:black;
+      font-weight: bolder;
+  }
+  .no-border{
+      border-top:none !important;
+  }
+</style>
+<!DOCTYPE html>
+<html>
+  <head>
+      <title><%= title %></title>
+      <% include ../partials/header %>
+  </head>
+  <body>
+      <header>
+          <% include ../partials/navigation %>
+      </header>
+      <body>
+          <h1 style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">UPDATE POSITION</h1>
+          <form name="form1" method="POST" action="/positions/updatestatusofposition">
+          <table class="table">
+              <tr>
+              <td class="heading no-border">Project Name</td>
+            
+              <td class="no-border">
+                <select style="min-width: 200px;" name ="projectname">
+                  <% positions.forEach((position) => { %> 
+                    <option value='<%= position.projectname %>'><%= position.projectname %></option>
+                    <% }) %>
+                </select>
+               </td>
+              </tr>
+              <tr>
+              <td class="heading no-border">Status</td>
+              <td class="no-border"> 
+                <select style="min-width: 200px;" name="status">
+                    <option value='open'>open</option>
+                    <option value='closed'>closed</option>
+                </select>
+              </td>
+              </tr>
+              <tr>
+              <td class="no-border" colspan="2"><button style="border-radius: 4px;" class="btn-warning" type="submit">UPDATE POSITION</td>
+              </tr>
+          </table>
+          </form>  
+      </body>
+  </body>
+</html>

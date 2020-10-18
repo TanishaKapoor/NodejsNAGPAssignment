@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/header %>
+    <title>No Authorization</title>
+  </head>
+  <body>
+    <header>
+      <% include ./partials/navigation %>
+    </header>
+    <p style="color: red;font-size: xx-large; font-weight: bolder;">Role of <%= expected %> was authorized for this. You are <%=actual%></p>
+    <img src="../images/unauthorized.jpg" alt="unauthorized">
+  </body>
+</html>

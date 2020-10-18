@@ -1,0 +1,54 @@
+<style>
+    .table{
+        width: 30% !important;
+        text-align: center;
+    }
+    .heading{
+      
+        font-size: larger;
+        color:black;
+        font-weight: bolder;
+    }
+    .no-border{
+        border-top:none !important;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <% include ../partials/header %>
+    </head>
+    <body>
+        <header>
+            <% include ../partials/navigation %>
+        </header>
+        <body>
+            <h1 style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">REGISTRATION</h1 style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">
+            <form name="form1" method="POST" action="/auth/register">
+            <table class="table">
+                <tr>
+                <td class="heading no-border">User Name</td>
+                <td class="no-border"><input type="text" name="username" ></td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Password</td>
+                <td class="no-border"><input type="text" name="password" ></td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Role</td>
+                <td class="no-border">
+                    <select name="role" style="min-width: 212px;">
+                        <option value='manager'>Manager</option>
+                        <option value='employee'>Employee</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                <td class="no-border" colspan="2"><button class="btn-success" type="submit">REGISTER</td>
+                </tr>
+            </table>
+            </form>  
+        </body>
+    </body>
+</html>

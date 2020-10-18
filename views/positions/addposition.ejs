@@ -1,0 +1,70 @@
+<style>
+    .table{
+        width: 30% !important;
+        text-align: center;
+    }
+    .heading{
+      
+        font-size: larger;
+        color:black;
+        font-weight: bolder;
+    }
+    .no-border{
+        border-top:none !important;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <% include ../partials/header %>
+    </head>
+    <body>
+        <header>
+            <% include ../partials/navigation %>
+        </header>
+        <body>
+            <div style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">ADD POSITION</div>
+            <form name="form1" method="POST" action="/positions/addposition">
+            <table class="table">
+                <tr>
+                <td class="heading no-border">Project Name</td>
+                <td class="no-border"><input type="text" name="projectname" ></td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Client Name</td>
+                <td class="no-border"><input type="text" name="clientname" ></td>
+                </tr>   
+                <tr>
+                <td class="heading no-border">Technologies</td>
+                <td class="no-border"><input type="text" name="technologies" ></td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Role</td>
+                <td class="no-border"><input type="text" name="role" ></td>
+                </tr>  
+                <tr>
+                <td class="heading no-border">Status</td>
+                <td class="no-border">
+                    <select name="status" style="min-width: 212px;">
+                        <option value='open'>open</option>
+                        <option value='closed'>closed</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Description</td>
+                <td class="no-border"><input type="text" name="jobDescription" ></td>
+                </tr>
+                <tr>
+                <td class="heading no-border">Created By</td>
+                <td class="no-border"><input type="text" name="createdby"></td>
+                </tr>
+                <tr>
+                <td class="no-border" colspan="2"><button class="btn-secondary" type="submit">REGISTER</td>
+                </tr>
+            </table>
+            </form>  
+        </body>
+    </body>
+</html>

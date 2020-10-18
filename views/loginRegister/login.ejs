@@ -1,0 +1,48 @@
+<style>
+    .table{
+        width: 30% !important;
+        text-align: center;
+    }
+    .heading{
+      
+        font-size: larger;
+        color:black;
+        font-weight: bolder;
+    }
+    .no-border{
+        border-top:none !important;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <% include ../partials/header %>
+    </head>
+    <body>
+        <header>
+            <% include ../partials/navigation %>
+        </header>
+        <body>
+            <h1 style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">LOGIN</h1>
+            <form name="form1" method="POST" action="/auth/login">
+            <table class="table">
+                <tr>
+                <td class=" no-border heading">First name</td>
+                <td class="no-border"><input type="text" name="username" ></td>
+                </tr>
+                <tr>
+                <td class=" no-border heading">Password</td>
+                <td class="no-border"><input type="password" name="password" ></td>
+                </tr>
+                <tr>
+                <td class="no-border" colspan="2"><button class="btn-primary" type="submit" >LOGIN</td>
+                </tr>
+            </table>
+            </form>  
+        </body>
+    </body>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</html>

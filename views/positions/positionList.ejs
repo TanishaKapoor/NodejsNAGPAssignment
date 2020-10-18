@@ -1,0 +1,88 @@
+<style>
+   .table{
+        width: 30% !important;
+        text-align: center;
+    }
+    .heading{
+      
+        font-size: larger;
+        color:black;
+        font-weight: bolder;
+    }
+    .no-border{
+        border-top:none !important;
+    }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 10px;
+    border: 7px solid chocolate;
+    margin: 0 8px 16px;
+    /* height:210px;
+    width: 360px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    overflow:scroll;
+    align-items: center; */
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Position List</title>
+        <% include ../partials/header %>
+    </head>
+    <body>
+        <header>
+            <% include ../partials/navigation %>
+        </header>
+<body>
+  <div style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">POSITONS LIST</div>
+<div class="list-group card-container">
+    <!-- loop over positions and render them -->
+    <%if (positions.length >0) { %>
+    <% positions.forEach((position) => { %> 
+      <!-- <form name="form1" method="GET" action="/positions/positionDetail"> -->
+        <div class="card">
+        <a href="/positions/positionDetail/<%= position.projectname%>" class="list-group-item">
+           <table class="table">
+              <tr>
+              <td class="heading no-border">Project Name</td>
+              <!-- <input hidden type="text" name="projectname" value="<%= position.projectname %>" > -->
+              <td class="no-border"><%= position.projectname %></td>
+              </tr> 
+              <tr>
+              <td class="heading no-border">Technologies</td>
+              <td class="no-border"><%= position.technologies %></td>
+              </tr>
+              <tr>
+              <td class="heading no-border">Role</td>
+              <td class="no-border"><%= position.role %></td>
+              </tr>
+          </table>  
+        </a>
+      </div>
+      <!-- </form> -->
+       
+    <% }) %>
+    <% } %>
+    <%if (positions.length ==0) { %>
+      <div style="color: deepskyblue;font-size: xx-large;font-weight: bolder;">No OPEN POSITIONS </div>
+    <% } %>
+  </div>
+
+</body>
+<footer>
+    <% include ../partials/footer %>
+</footer>
+</html>
